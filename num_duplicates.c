@@ -15,6 +15,7 @@ int num_of_duplicates(const char *s){
             if(i != j && s[i] == new[j]){
                 count++; //duplicate of s[i] appears and count increases by 1
                 new[i] = '\0'; //turn duplicates of s[i] to null
+                
                 for(int k = 0;k < strlen(s);k++){
                     if(k != i && s[i] == new[k]){
                         new[k] = '\0'; //searches for other duplicates of s[i] and turns them to null
