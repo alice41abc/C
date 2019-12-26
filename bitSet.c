@@ -4,7 +4,7 @@
 
 bool contains(unsigned int num, unsigned int len, long int set[len])
 {
-    for(int i = 0; i< len;i++) {
+    for(int i = 0; i < len;i++) {
         if ((i * 64) <= num && num < (64 * (i + 1))) {
             if (set[i] >> (num-i*64) & 1){
                 return true;
@@ -20,15 +20,15 @@ void setAdd(unsigned int num, unsigned int len, long int set[len])
     long int pow=1;
     for(int i = 0; i < len;i++) {
         if (i*64 <= num && num < 64 * (i + 1)) {
-            if(num==((i+1)*64-1)){
+            if(num == ((i + 1) * 64 - 1)){
 
             }
-            if(num!=64*i) {
+            if(num != 64 * i) {
                 for (int j = 0; j < (num - i * 64); j++) {
                     pow *= 2;
                 }
             }
-            set [i]+=pow;
+            set[i] += pow;
             break;
         }
     }
@@ -36,10 +36,10 @@ void setAdd(unsigned int num, unsigned int len, long int set[len])
 
 void setRemove(unsigned int num, unsigned int len, long int set[len])
 {
-    long int pow=1;
+    long int pow = 1;
     for(int i = 0; i < len;i++) {
         if (i*64 <= num < 64 * (i + 1)) {
-            if(num!=64*i && contains(num,len,set)==1) {
+            if(num != 64 * i && contains(num,len,set) == 1) {
                 for (int j = 0; j < (num - i * 64); j++) {
                     pow *= 2;
                 }

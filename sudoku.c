@@ -5,8 +5,8 @@
 bool checkSudoku(int sudoku[9][9]){
 
 
-    for(int i =0; i<9;i++){
-        for(int j = 0;j<9;j++) {
+    for(int i = 0;i < 9;i++){
+        for(int j = 0;j < 9;j++) {
             for (int l = 1; l < 8; l++) {
                 int box[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
                 int x = 0;
@@ -41,9 +41,12 @@ bool checkSudoku(int sudoku[9][9]){
                 }
             }
         }
-            }
-
-
+    }
     return true;
 }
 
+int main(void){
+    int t1[9][9]={{7,3,5,6,1,4,8,9,2},{8,4,2,9,7,3,5,6,1},{9,6,1,2,8,5,3,7,4},{2,8,6,3,4,9,1,5,7},{4,1,3,8,5,7,9,2,6},{5,7,9,1,2,6,4,3,8},{1,5,7,4,9,2,6,8,3},{6,9,4,7,3,8,2,1,5},{3,2,8,5,6,1,7,4,9}};
+    printf("%d",checkSudoku(t1));
+    return 0;
+}
