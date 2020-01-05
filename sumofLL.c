@@ -9,6 +9,7 @@ struct ListNode {
 void addnode(int num, struct ListNode* l){
     struct ListNode* lnew = malloc(sizeof(struct ListNode));
     if(l->next != NULL){
+        l=l->next;
     }
     l-> next = lnew;
     lnew->val = num;
